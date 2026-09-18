@@ -1,30 +1,10 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Menu, Moon, Sun, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { navLinks } from '@/data/personal'
 import { useActiveSection } from '@/hooks/useActiveSection'
 import { cx } from '@/lib/utils'
-
-function ThemeToggle() {
-  const [dark, setDark] = useState(() => document.documentElement.classList.contains('dark'))
-
-  const toggleTheme = () => {
-    const nextDark = !dark
-    document.documentElement.classList.toggle('dark', nextDark)
-    setDark(nextDark)
-  }
-
-  return (
-    <button
-      type="button"
-      onClick={toggleTheme}
-      aria-label={dark ? 'Switch to light theme' : 'Switch to dark theme'}
-      className="grid h-9 w-9 place-items-center rounded-full text-text"
-    >
-      {dark ? <Sun size={17} /> : <Moon size={17} />}
-    </button>
-  )
-}
+import ThemeToggle from '@/components/ui/ThemeToggle'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)

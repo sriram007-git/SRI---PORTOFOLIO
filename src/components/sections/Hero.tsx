@@ -72,7 +72,18 @@ export default function Hero() {
           variants={item}
           className="max-w-3xl font-display text-[13vw] font-semibold leading-[0.98] text-text text-balance sm:text-6xl md:text-7xl"
         >
-          Hi, I'm <span className="bg-linear-to-r from-violet-soft to-cyan bg-clip-text text-transparent">Sriram</span>
+          Hi, I'm{' '}
+          <span
+            style={{
+              background: 'linear-gradient(to right, #a996ff, #45e0c6)',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              color: 'transparent',
+              WebkitTextFillColor: 'transparent',
+            }}
+          >
+            Sriram
+          </span>
         </motion.h1>
 
         <motion.p variants={item} className="mt-5 max-w-xl font-display text-lg text-muted sm:text-xl">

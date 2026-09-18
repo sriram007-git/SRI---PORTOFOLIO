@@ -2,10 +2,12 @@ import { motion } from 'framer-motion'
 import { Download, FileText } from 'lucide-react'
 import { personal } from '@/data/personal'
 import SectionHeading from '@/components/ui/SectionHeading'
+import SectionBackground from '@/components/ui/SectionBackground'
 
 export default function Resume() {
   return (
     <section id="resume" className="relative px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
+      <SectionBackground />
       <div className="mx-auto max-w-7xl">
         <SectionHeading label="resume" title="The one-page version of all this." />
 
@@ -52,14 +54,11 @@ export default function Resume() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.55, delay: 0.1 }}
-          className="glass mt-5 max-w-2xl overflow-hidden rounded-2xl border border-line"
+          className="glass mt-5 max-w-2xl rounded-2xl border border-dashed border-line p-8 text-center"
         >
-          <iframe
-            src={personal.resumeEmbedUrl}
-            title="Sriram's Resume Preview"
-            className="aspect-3/4 w-full sm:aspect-video"
-            allow="autoplay"
-          />
+          <p className="text-sm text-faint">
+            Click "View Resume" above to open the full PDF in a new tab.
+          </p>
         </motion.div>
       </div>
     </section>
